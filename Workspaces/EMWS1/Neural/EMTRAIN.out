@@ -1,0 +1,154 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Summary
+
+          Measurement    Frequency
+ Role        Level         Count
+
+INPUT      INTERVAL          4    
+INPUT      NOMINAL           2    
+TARGET     BINARY            1    
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Model Events
+
+                                   Number
+                    Measurement      of
+Target     Event       Level       Levels      Order        Label
+
+WidgBuy     YES       BINARY          2      Descending    WidgBuy
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Predicted and decision variables
+
+Type         Variable        Label
+
+TARGET       WidgBuy         WidgBuy               
+PREDICTED    P_WidgBuyYes    Predicted: WidgBuy=Yes
+RESIDUAL     R_WidgBuyYes    Residual: WidgBuy=Yes 
+PREDICTED    P_WidgBuyNo     Predicted: WidgBuy=No 
+RESIDUAL     R_WidgBuyNo     Residual: WidgBuy=No  
+FROM         F_WidgBuy       From: WidgBuy         
+INTO         I_WidgBuy       Into: WidgBuy         
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+The NEURAL Procedure
+
+Preliminary       Starting         Objective         Number
+ Training          Random           Function           of        Terminating
+    Run             Seed             Value         Iterations     Criteria
+
+        1               12345    0.000394618961            5      ABSCONV   
+        2          1845735214    0.000268132549            6      ABSCONV   
+        3            44175937    0.000650069361            5      ABSCONV   
+        4          1797629599    0.000301817513            5      ABSCONV   
+        5          1290272720    0.000512777538            5      ABSCONV   
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+The NEURAL Procedure
+
+                 Optimization Start
+                 Parameter Estimates
+                                            Gradient
+                                           Objective
+  N Parameter               Estimate        Function
+
+  1 Age_H11                 1.311198    -0.000056752
+  2 X2_H11                 -0.854733     0.000010704
+  3 X4_H11                  0.392148    -0.000015500
+  4 X5_H11                  0.613494    -0.000040974
+  5 Incomehigh_H11          2.055892    -0.000027250
+  6 ResidenceCHI_H11        4.388065     0.000003840
+  7 ResidenceLA_H11        -0.264221     0.000024807
+  8 BIAS_H11                1.168694    -0.000008355
+  9 H11_WidgBuyYes         -8.416520        0.000263
+ 10 BIAS_WidgBuyYes         0.408912     0.000075145
+
+Value of Objective Function = 0.0002681325
+
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+The NEURAL Procedure
+
+Levenberg-Marquardt Optimization
+
+
+Minimum Iterations                                0
+Maximum Iterations                               50
+Maximum Function Calls                   2147483647
+Maximum CPU Time                              14400
+ABSGCONV Gradient Criterion                 0.00001
+GCONV Gradient Criterion                       1E-8
+GCONV2 Gradient Criterion                         0
+ABSFCONV Function Criterion                       0
+FCONV Function Criterion                     0.0001
+FCONV2 Function Criterion                         0
+FSIZE Parameter                                   0
+ABSXCONV Parameter Change Criterion               0
+XCONV Parameter Change Criterion                  0
+XSIZE Parameter                                   0
+ABSCONV Function Criterion             0.0013963447
+Trust Region Initial Radius Factor                1
+Singularity Tolerance (SINGULAR)               1E-8
+
+Levenberg-Marquardt Optimization
+
+Scaling Update of More (1978)
+
+Parameter Estimates              10
+
+                                             Optimization Start
+
+Active Constraints                                  0  Objective Function                       0.0002681325
+Max Abs Gradient Element                 0.0002625828  Radius                                              1
+
+                                            Optimization Results
+
+Iterations                                          0  Function Calls                                      3
+Jacobian Calls                                      1  Active Constraints                                  0
+Objective Function                       0.0002681325  Max Abs Gradient Element                 0.0002625828
+Lambda                                              0  Actual Over Pred Change                             0
+Radius                                              1                                                       
+
+Convergence criterion (ABSCONV=0.0013963447) satisfied.                                           
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+The NEURAL Procedure
+
+                Optimization Results
+                 Parameter Estimates
+                                            Gradient
+                                           Objective
+  N Parameter               Estimate        Function
+
+  1 Age_H11                 1.311198    -0.000056752
+  2 X2_H11                 -0.854733     0.000010704
+  3 X4_H11                  0.392148    -0.000015500
+  4 X5_H11                  0.613494    -0.000040974
+  5 Incomehigh_H11          2.055892    -0.000027250
+  6 ResidenceCHI_H11        4.388065     0.000003840
+  7 ResidenceLA_H11        -0.264221     0.000024807
+  8 BIAS_H11                1.168694    -0.000008355
+  9 H11_WidgBuyYes         -8.416520        0.000263
+ 10 BIAS_WidgBuyYes         0.408912     0.000075145
+
+Value of Objective Function = 0.0002681325
+

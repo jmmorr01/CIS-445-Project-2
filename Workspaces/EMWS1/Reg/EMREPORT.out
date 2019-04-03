@@ -1,0 +1,102 @@
+ 
+                                                                                               
+ 
+ 
+Fit Statistics
+
+Target=WidgBuy Target Label=WidgBuy
+
+   Fit
+Statistics    Statistics Label                   Train
+
+ _AIC_        Akaike's Information Criterion    16.0123
+ _ASE_        Average Squared Error              0.0000
+ _AVERR_      Average Error Function             0.0003
+ _DFE_        Degrees of Freedom for Error      12.0000
+ _DFM_        Model Degrees of Freedom           8.0000
+ _DFT_        Total Degrees of Freedom          20.0000
+ _DIV_        Divisor for ASE                   40.0000
+ _ERR_        Error Function                     0.0123
+ _FPE_        Final Prediction Error             0.0000
+ _MAX_        Maximum Absolute Error             0.0013
+ _MSE_        Mean Square Error                  0.0000
+ _NOBS_       Sum of Frequencies                20.0000
+ _NW_         Number of Estimate Weights         8.0000
+ _RASE_       Root Average Sum of Squares        0.0005
+ _RFPE_       Root Final Prediction Error        0.0008
+ _RMSE_       Root Mean Squared Error            0.0007
+ _SBC_        Schwarz's Bayesian Criterion      23.9781
+ _SSE_        Sum of Squared Errors              0.0000
+ _SUMW_       Sum of Case Weights Times Freq    40.0000
+ _MISC_       Misclassification Rate             0.0000
+ 
+                                                                                               
+ 
+ 
+Classification Table
+
+Data Role=TRAIN Target Variable=WidgBuy Target Label=WidgBuy
+
+                       Target        Outcome     Frequency       Total
+Target    Outcome    Percentage    Percentage      Count      Percentage
+
+ NO         NO           100           100            9           45    
+ YES        YES          100           100           11           55    
+ 
+                                                                                               
+ 
+ 
+Event Classification Table
+
+Data Role=TRAIN Target=WidgBuy Target Label=WidgBuy
+
+  False       True        False       True
+Negative    Negative    Positive    Positive
+
+    0           9           0          11   
+ 
+                                                                                               
+ 
+ 
+Assessment Score Rankings
+
+Data Role=TRAIN Target Variable=WidgBuy Target Label=WidgBuy
+
+                                                                                    Mean
+                            Cumulative       %      Cumulative     Number of     Posterior
+Depth     Gain      Lift       Lift      Response   % Response   Observations   Probability
+
+   5    81.8182   1.81818     1.81818       100       100.000          1          1.00000  
+  10    81.8182   1.81818     1.81818       100       100.000          1          1.00000  
+  15    81.8182   1.81818     1.81818       100       100.000          1          1.00000  
+  20    81.8182   1.81818     1.81818       100       100.000          1          1.00000  
+  25    81.8182   1.81818     1.81818       100       100.000          1          1.00000  
+  30    81.8182   1.81818     1.81818       100       100.000          1          1.00000  
+  35    81.8182   1.81818     1.81818       100       100.000          1          1.00000  
+  40    81.8182   1.81818     1.81818       100       100.000          1          0.99972  
+  45    81.8182   1.81818     1.81818       100       100.000          1          0.99942  
+  50    81.8182   1.81818     1.81818       100       100.000          1          0.99898  
+  55    81.8182   1.81818     1.81818       100       100.000          1          0.99872  
+  60    66.6667   0.00000     1.66667         0        91.667          1          0.00113  
+  65    53.8462   0.00000     1.53846         0        84.615          1          0.00052  
+  70    42.8571   0.00000     1.42857         0        78.571          1          0.00051  
+  75    33.3333   0.00000     1.33333         0        73.333          1          0.00050  
+  80    25.0000   0.00000     1.25000         0        68.750          1          0.00031  
+  85    17.6471   0.00000     1.17647         0        64.706          1          0.00001  
+  90    11.1111   0.00000     1.11111         0        61.111          1          0.00000  
+  95     5.2632   0.00000     1.05263         0        57.895          1          0.00000  
+ 100     0.0000   0.00000     1.00000         0        55.000          1          0.00000  
+ 
+                                                                                               
+ 
+ 
+Assessment Score Distribution
+
+Data Role=TRAIN Target Variable=WidgBuy Target Label=WidgBuy
+
+ Posterior     Number                     Mean
+Probability      of      Number of     Posterior
+   Range       Events    Nonevents    Probability    Percentage
+
+ 0.95-1.00       11          0          0.99971          55    
+ 0.00-0.05        0          9          0.00033          45    

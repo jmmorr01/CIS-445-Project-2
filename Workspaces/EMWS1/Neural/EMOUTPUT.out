@@ -1,0 +1,274 @@
+*------------------------------------------------------------*
+User:                jmmorr01
+Date:                October 29, 2018
+Time:                11:41:53
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+          Measurement    Frequency
+ Role        Level         Count
+ 
+INPUT      INTERVAL          4
+INPUT      NOMINAL           2
+TARGET     BINARY            1
+ 
+ 
+ 
+ 
+Model Events
+ 
+                                   Number
+                    Measurement      of
+Target     Event       Level       Levels      Order        Label
+ 
+WidgBuy     YES       BINARY          2      Descending    WidgBuy
+ 
+ 
+ 
+ 
+Predicted and decision variables
+ 
+Type         Variable        Label
+ 
+TARGET       WidgBuy         WidgBuy
+PREDICTED    P_WidgBuyYes    Predicted: WidgBuy=Yes
+RESIDUAL     R_WidgBuyYes    Residual: WidgBuy=Yes
+PREDICTED    P_WidgBuyNo     Predicted: WidgBuy=No
+RESIDUAL     R_WidgBuyNo     Residual: WidgBuy=No
+FROM         F_WidgBuy       From: WidgBuy
+INTO         I_WidgBuy       Into: WidgBuy
+ 
+ 
+ 
+ 
+ 
+The NEURAL Procedure
+ 
+Preliminary       Starting         Objective         Number
+ Training          Random           Function           of        Terminating
+    Run             Seed             Value         Iterations     Criteria
+ 
+        1               12345    0.000394618961            5      ABSCONV
+        2          1845735214    0.000268132549            6      ABSCONV
+        3            44175937    0.000650069361            5      ABSCONV
+        4          1797629599    0.000301817513            5      ABSCONV
+        5          1290272720    0.000512777538            5      ABSCONV
+ 
+ 
+ 
+ 
+ 
+The NEURAL Procedure
+ 
+                 Optimization Start
+                 Parameter Estimates
+                                            Gradient
+                                           Objective
+  N Parameter               Estimate        Function
+ 
+  1 Age_H11                 1.311198    -0.000056752
+  2 X2_H11                 -0.854733     0.000010704
+  3 X4_H11                  0.392148    -0.000015500
+  4 X5_H11                  0.613494    -0.000040974
+  5 Incomehigh_H11          2.055892    -0.000027250
+  6 ResidenceCHI_H11        4.388065     0.000003840
+  7 ResidenceLA_H11        -0.264221     0.000024807
+  8 BIAS_H11                1.168694    -0.000008355
+  9 H11_WidgBuyYes         -8.416520        0.000263
+ 10 BIAS_WidgBuyYes         0.408912     0.000075145
+ 
+Value of Objective Function = 0.0002681325
+ 
+ 
+ 
+ 
+ 
+ 
+The NEURAL Procedure
+ 
+Levenberg-Marquardt Optimization
+ 
+ 
+Minimum Iterations                                0
+Maximum Iterations                               50
+Maximum Function Calls                   2147483647
+Maximum CPU Time                              14400
+ABSGCONV Gradient Criterion                 0.00001
+GCONV Gradient Criterion                       1E-8
+GCONV2 Gradient Criterion                         0
+ABSFCONV Function Criterion                       0
+FCONV Function Criterion                     0.0001
+FCONV2 Function Criterion                         0
+FSIZE Parameter                                   0
+ABSXCONV Parameter Change Criterion               0
+XCONV Parameter Change Criterion                  0
+XSIZE Parameter                                   0
+ABSCONV Function Criterion             0.0013963447
+Trust Region Initial Radius Factor                1
+Singularity Tolerance (SINGULAR)               1E-8
+ 
+Levenberg-Marquardt Optimization
+ 
+Scaling Update of More (1978)
+ 
+Parameter Estimates              10
+ 
+                                             Optimization Start
+ 
+Active Constraints                                  0  Objective Function                       0.0002681325
+Max Abs Gradient Element                 0.0002625828  Radius                                              1
+ 
+                                            Optimization Results
+ 
+Iterations                                          0  Function Calls                                      3
+Jacobian Calls                                      1  Active Constraints                                  0
+Objective Function                       0.0002681325  Max Abs Gradient Element                 0.0002625828
+Lambda                                              0  Actual Over Pred Change                             0
+Radius                                              1
+ 
+Convergence criterion (ABSCONV=0.0013963447) satisfied.
+ 
+ 
+ 
+ 
+ 
+The NEURAL Procedure
+ 
+                Optimization Results
+                 Parameter Estimates
+                                            Gradient
+                                           Objective
+  N Parameter               Estimate        Function
+ 
+  1 Age_H11                 1.311198    -0.000056752
+  2 X2_H11                 -0.854733     0.000010704
+  3 X4_H11                  0.392148    -0.000015500
+  4 X5_H11                  0.613494    -0.000040974
+  5 Incomehigh_H11          2.055892    -0.000027250
+  6 ResidenceCHI_H11        4.388065     0.000003840
+  7 ResidenceLA_H11        -0.264221     0.000024807
+  8 BIAS_H11                1.168694    -0.000008355
+  9 H11_WidgBuyYes         -8.416520        0.000263
+ 10 BIAS_WidgBuyYes         0.408912     0.000075145
+ 
+Value of Objective Function = 0.0002681325
+ 
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Fit Statistics
+ 
+Target=WidgBuy Target Label=WidgBuy
+ 
+   Fit
+Statistics    Statistics Label                    Train
+ 
+ _DFT_        Total Degrees of Freedom           20.0000
+ _DFE_        Degrees of Freedom for Error       10.0000
+ _DFM_        Model Degrees of Freedom           10.0000
+ _NW_         Number of Estimated Weights        10.0000
+ _AIC_        Akaike's Information Criterion     20.0107
+ _SBC_        Schwarz's Bayesian Criterion       29.9680
+ _ASE_        Average Squared Error               0.0000
+ _MAX_        Maximum Absolute Error              0.0005
+ _DIV_        Divisor for ASE                    40.0000
+ _NOBS_       Sum of Frequencies                 20.0000
+ _RASE_       Root Average Squared Error          0.0003
+ _SSE_        Sum of Squared Errors               0.0000
+ _SUMW_       Sum of Case Weights Times Freq     40.0000
+ _FPE_        Final Prediction Error              0.0000
+ _MSE_        Mean Squared Error                  0.0000
+ _RFPE_       Root Final Prediction Error         0.0005
+ _RMSE_       Root Mean Squared Error             0.0004
+ _AVERR_      Average Error Function              0.0003
+ _ERR_        Error Function                      0.0107
+ _MISC_       Misclassification Rate              0.0000
+ _WRONG_      Number of Wrong Classifications     0.0000
+ 
+ 
+ 
+ 
+Classification Table
+ 
+Data Role=TRAIN Target Variable=WidgBuy Target Label=WidgBuy
+ 
+                       Target        Outcome     Frequency       Total
+Target    Outcome    Percentage    Percentage      Count      Percentage
+ 
+ NO         NO           100           100            9           45
+ YES        YES          100           100           11           55
+ 
+ 
+ 
+ 
+Event Classification Table
+ 
+Data Role=TRAIN Target=WidgBuy Target Label=WidgBuy
+ 
+  False       True        False       True
+Negative    Negative    Positive    Positive
+ 
+    0           9           0          11
+ 
+ 
+ 
+ 
+Assessment Score Rankings
+ 
+Data Role=TRAIN Target Variable=WidgBuy Target Label=WidgBuy
+ 
+                                                                                    Mean
+                            Cumulative       %      Cumulative     Number of     Posterior
+Depth     Gain      Lift       Lift      Response   % Response   Observations   Probability
+ 
+   5    81.8182   1.81818     1.81818       100       100.000          1          0.99985
+  10    81.8182   1.81818     1.81818       100       100.000          1          0.99985
+  15    81.8182   1.81818     1.81818       100       100.000          1          0.99985
+  20    81.8182   1.81818     1.81818       100       100.000          1          0.99985
+  25    81.8182   1.81818     1.81818       100       100.000          1          0.99985
+  30    81.8182   1.81818     1.81818       100       100.000          1          0.99985
+  35    81.8182   1.81818     1.81818       100       100.000          1          0.99985
+  40    81.8182   1.81818     1.81818       100       100.000          1          0.99985
+  45    81.8182   1.81818     1.81818       100       100.000          1          0.99983
+  50    81.8182   1.81818     1.81818       100       100.000          1          0.99972
+  55    81.8182   1.81818     1.81818       100       100.000          1          0.99970
+  60    66.6667   0.00000     1.66667         0        91.667          1          0.00051
+  65    53.8462   0.00000     1.53846         0        84.615          1          0.00042
+  70    42.8571   0.00000     1.42857         0        78.571          1          0.00041
+  75    33.3333   0.00000     1.33333         0        73.333          1          0.00038
+  80    25.0000   0.00000     1.25000         0        68.750          1          0.00037
+  85    17.6471   0.00000     1.17647         0        64.706          1          0.00035
+  90    11.1111   0.00000     1.11111         0        61.111          1          0.00033
+  95     5.2632   0.00000     1.05263         0        57.895          1          0.00033
+ 100     0.0000   0.00000     1.00000         0        55.000          1          0.00033
+ 
+ 
+ 
+ 
+Assessment Score Distribution
+ 
+Data Role=TRAIN Target Variable=WidgBuy Target Label=WidgBuy
+ 
+ Posterior     Number                     Mean
+Probability      of      Number of     Posterior
+   Range       Events    Nonevents    Probability    Percentage
+ 
+ 0.95-1.00       11          0          0.99982          55
+ 0.00-0.05        0          9          0.00038          45

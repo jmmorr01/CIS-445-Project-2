@@ -1,0 +1,473 @@
+MPRINT(EM_DIAGRAM):    data _null_;
+MPRINT(EM_DIAGRAM):   call symput('NLDATE', strip(put(date(), NLDATE.)));
+MPRINT(EM_DIAGRAM):   call symput('NLTIME', strip(put(datetime(), NLTIME.)));
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   nldate= sasmsg("sashelp.dmine", "log_date_note", 'N', "October 29, 2018" );
+MPRINT(EM_DIAGRAM):   nltime= sasmsg("sashelp.dmine", "log_time_note", 'N', "12:00:00" );
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "* Training Log";
+MPRINT(EM_DIAGRAM):   put nldate;
+MPRINT(EM_DIAGRAM):   put nltime;
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   run;
+*------------------------------------------------------------*
+* Training Log
+Date:                October 29, 2018
+Time:                12:00:00
+*------------------------------------------------------------*
+MPRINT(EM_DIAGRAM):    filename O2EA9B5S "J:\JMMORR01\CIS 445\Project 2\CIS 445 Project 2\Workspaces\EMWS1\Score\EMTRAIN.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):   proc printto print=O2EA9B5S new;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _LOG "J:\JMMORR01\CIS 445\Project 2\CIS 445 Project 2\Workspaces\EMWS1\Score\EMLOG.log" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):    data _null_;
+MPRINT(EM_DIAGRAM):   call symput('NLDATE', strip(put(date(), NLDATE.)));
+MPRINT(EM_DIAGRAM):   call symput('NLTIME', strip(put(datetime(), NLTIME.)));
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   nldate= sasmsg("sashelp.dmine", "log_date_note", 'N', "October 29, 2018" );
+MPRINT(EM_DIAGRAM):   nltime= sasmsg("sashelp.dmine", "log_time_note", 'N', "12:00:00" );
+MPRINT(EM_DIAGRAM):   file _LOG;
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "User:                jmmorr01";
+MPRINT(EM_DIAGRAM):   put nldate;
+MPRINT(EM_DIAGRAM):   put nltime;
+MPRINT(EM_DIAGRAM):   put "Site:                70080761";
+MPRINT(EM_DIAGRAM):   put "Platform:            X64_8PRO";
+MPRINT(EM_DIAGRAM):   put "Maintenance Release: 9.04.01M3P062415";
+MPRINT(EM_DIAGRAM):   put "EM Version:          14.1";
+MPRINT(EM_DIAGRAM):   put "* ";
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _LOGIN "J:\JMMORR01\CIS 445\Project 2\CIS 445 Project 2\Workspaces\EMWS1\Score\EMTRAIN.log" encoding="UTF-8" NOBOM;
+MPRINT(EM_COPYFILE):   data _null_;
+MPRINT(EM_COPYFILE):   length line $20000;
+MPRINT(EM_COPYFILE):   file _LOG MOD lrecl=20000;
+MPRINT(EM_COPYFILE):   fid=fopen("_LOGIN",'i',20000,'v');
+MPRINT(EM_COPYFILE):   if fid > 0 then do;
+MPRINT(EM_COPYFILE):   do while(^fread(fid));
+MPRINT(EM_COPYFILE):   rlen = frlen(fid);
+MPRINT(EM_COPYFILE):   rc= fget(fid,line,20000);
+MPRINT(EM_COPYFILE):   start = length(line)-length(left(line))+1;
+MPRINT(EM_COPYFILE):   line=strip(line);
+MPRINT(EM_COPYFILE):   put @start line;
+MPRINT(EM_COPYFILE):   end;
+MPRINT(EM_COPYFILE):   if fid > 0 then rc=fclose(fid);
+MPRINT(EM_COPYFILE):   end;
+MPRINT(EM_COPYFILE):   run;
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   filename _LOGIN;
+MPRINT(EM_DIAGRAM):    data _null_;
+MPRINT(EM_DIAGRAM):   file _LOG mod;
+MPRINT(EM_DIAGRAM):   put _page_;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   filename _LOGIN "J:\JMMORR01\CIS 445\Project 2\CIS 445 Project 2\Workspaces\EMWS1\Score\EMSCORE.log" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   file _LOG mod;
+MPRINT(EM_DIAGRAM):   put _page_;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _LOGIN "J:\JMMORR01\CIS 445\Project 2\CIS 445 Project 2\Workspaces\EMWS1\Score\EMREPORT.log" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   filename _LOGIN;
+MPRINT(EM_DIAGRAM):    filename _LOG;
+MPRINT(EM_DIAGRAM):    filename _OUT "J:\JMMORR01\CIS 445\Project 2\CIS 445 Project 2\Workspaces\EMWS1\Score\EMOUTPUT.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):    data _null_;
+MPRINT(EM_DIAGRAM):   call symput('NLDATE', strip(put(date(), NLDATE.)));
+MPRINT(EM_DIAGRAM):   call symput('NLTIME', strip(put(datetime(), NLTIME.)));
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):   data _null_;
+MPRINT(EM_DIAGRAM):   nldate= sasmsg("sashelp.dmine", "log_date_note", 'N', "October 29, 2018" );
+MPRINT(EM_DIAGRAM):   nltime= sasmsg("sashelp.dmine", "log_time_note", 'N', "12:00:00" );
+MPRINT(EM_DIAGRAM):   file _OUT;
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "User:                jmmorr01";
+MPRINT(EM_DIAGRAM):   put nldate;
+MPRINT(EM_DIAGRAM):   put nltime;
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "* Training Output";
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _OUTIN "J:\JMMORR01\CIS 445\Project 2\CIS 445 Project 2\Workspaces\EMWS1\Score\EMTRAIN.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):   ;
+MPRINT(EM_COPYFILE):   data _null_;
+MPRINT(EM_COPYFILE):   length line $20000;
+MPRINT(EM_COPYFILE):   file _OUT MOD lrecl=20000;
+MPRINT(EM_COPYFILE):   fid=fopen("_OUTIN",'i',20000,'v');
+MPRINT(EM_COPYFILE):   if fid > 0 then do;
+MPRINT(EM_COPYFILE):   do while(^fread(fid));
+MPRINT(EM_COPYFILE):   rlen = frlen(fid);
+MPRINT(EM_COPYFILE):   rc= fget(fid,line,20000);
+MPRINT(EM_COPYFILE):   start = length(line)-length(left(line))+1;
+MPRINT(EM_COPYFILE):   line=strip(line);
+MPRINT(EM_COPYFILE):   put @start line;
+MPRINT(EM_COPYFILE):   end;
+MPRINT(EM_COPYFILE):   if fid > 0 then rc=fclose(fid);
+MPRINT(EM_COPYFILE):   end;
+MPRINT(EM_COPYFILE):   run;
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   filename _OUTIN;
+MPRINT(EM_DIAGRAM):    data _null_;
+MPRINT(EM_DIAGRAM):   file _OUT mod;
+MPRINT(EM_DIAGRAM):   put _page_;
+MPRINT(EM_DIAGRAM):   put // "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "* Score Output";
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _OUTIN "J:\JMMORR01\CIS 445\Project 2\CIS 445 Project 2\Workspaces\EMWS1\Score\EMSCORE.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   filename _OUTIN;
+MPRINT(EM_DIAGRAM):    data _null_;
+MPRINT(EM_DIAGRAM):   file _OUT mod;
+MPRINT(EM_DIAGRAM):   put _page_;
+MPRINT(EM_DIAGRAM):   put // "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   put "* Report Output";
+MPRINT(EM_DIAGRAM):   put "*------------------------------------------------------------*";
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    filename _OUTIN "J:\JMMORR01\CIS 445\Project 2\CIS 445 Project 2\Workspaces\EMWS1\Score\EMREPORT.out" encoding="UTF-8" NOBOM;
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   filename _OUTIN;
+MPRINT(EM_DIAGRAM):    filename _OUT;
+MPRINT(EM_DIAGRAM):    filename _emtool_ 'J:\JMMORR01\CIS 445\Project 2\CIS 445 Project 2\Workspaces\EMWS1\Score\EMRUNSTATUS.xml' encoding="UTF-8" NOBOM;
+29672      proc freq data=EMWS1.Score_VariableSet noprint;
+MPRINT(EM_DIAGRAM):    proc freq data=EMWS1.Score_VariableSet noprint;
+29673      table ROLE*LEVEL/out=WORK.ScoreMETA;
+MPRINT(EM_DIAGRAM):   table ROLE*LEVEL/out=WORK.ScoreMETA;
+29674      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 2 observations read from the data set EMWS1.SCORE_VARIABLESET.
+NOTE: The data set WORK.SCOREMETA has 2 observations and 4 variables.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.06 seconds
+      
+
+29675      proc print data=WORK.ScoreMETA label noobs;
+MPRINT(EM_DIAGRAM):   proc print data=WORK.ScoreMETA label noobs;
+29676      var ROLE LEVEL COUNT;
+MPRINT(EM_DIAGRAM):   var ROLE LEVEL COUNT;
+29677      label ROLE = "%sysfunc(sasmsg(sashelp.dmine, meta_role_vlabel, NOQUOTE))" LEVEL = "%sysfunc(sasmsg(sashelp.dmine, meta_level_vlabel, NOQUOTE))" COUNT = "%sysfunc(sasmsg(sashelp.dmine, rpt_count_vlabel, NOQUOTE))";
+MPRINT(EM_DIAGRAM):   label ROLE = "Role" LEVEL = "Measurement Level" COUNT = "Frequency Count";
+29678      title9 ' ';
+MPRINT(EM_DIAGRAM):   title9 ' ';
+29679      title10 "%sysfunc(sasmsg(sashelp.dmine, rpt_varSummary_title  , NOQUOTE))";
+MPRINT(EM_DIAGRAM):   title10 "Variable Summary";
+MPRINT(EM_DIAGRAM):   run;
+29680      run;
+
+NOTE: There were 2 observations read from the data set WORK.SCOREMETA.
+NOTE: The PROCEDURE PRINT printed page 4.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+29681      title10;
+MPRINT(EM_DIAGRAM):   title10;
+29682      %let groupid =;
+29683      %let endGroupid =;
+29684      %let prescoreid =;
+29685      %let idsTable =;
+29686      %let hpdmTable =;
+29687      %let lasthptm =;
+29688      data _null_;
+MPRINT(EM_DIAGRAM):    data _null_;
+29689      set EMWS1.Neural_EMINFO;
+MPRINT(EM_DIAGRAM):   set EMWS1.Neural_EMINFO;
+29690      where upcase(key) in('LASTHPTM', 'IDSTABLE', 'HPDMSAMPLE', 'PRESCORECODE','ENDGROUP', 'GROUPINFO', 'BOOSTINFO', 'BAGINFO', 'TARGETINFO', 'INDEXINFO');
+MPRINT(EM_DIAGRAM):   where upcase(key) in('LASTHPTM', 'IDSTABLE', 'HPDMSAMPLE', 'PRESCORECODE','ENDGROUP', 'GROUPINFO', 'BOOSTINFO', 'BAGINFO', 'TARGETINFO', 'INDEXINFO');
+29691      select(upcase(key));
+MPRINT(EM_DIAGRAM):   select(upcase(key));
+29692      when('LASTHPTM') call symput('lasthptm', DATA);
+MPRINT(EM_DIAGRAM):   when('LASTHPTM') call symput('lasthptm', DATA);
+29693      when('IDSTABLE') call symput('idsTable', DATA);
+MPRINT(EM_DIAGRAM):   when('IDSTABLE') call symput('idsTable', DATA);
+29694      when('HPDMSAMPLE') call symput('hpdmSample', DATA);
+MPRINT(EM_DIAGRAM):   when('HPDMSAMPLE') call symput('hpdmSample', DATA);
+29695      when('PRESCORECODE') call symput('prescoreId', DATA);
+MPRINT(EM_DIAGRAM):   when('PRESCORECODE') call symput('prescoreId', DATA);
+29696      when('ENDGROUP') call symput('endGroupId', DATA);
+MPRINT(EM_DIAGRAM):   when('ENDGROUP') call symput('endGroupId', DATA);
+29697      otherwise call symput('groupId', DATA);
+MPRINT(EM_DIAGRAM):   otherwise call symput('groupId', DATA);
+29698      end;
+MPRINT(EM_DIAGRAM):   end;
+29699      run;
+MPRINT(EM_DIAGRAM):   run;
+
+NOTE: There were 0 observations read from the data set EMWS1.NEURAL_EMINFO.
+      WHERE UPCASE(key) in ('BAGINFO', 'BOOSTINFO', 'ENDGROUP', 'GROUPINFO', 'HPDMSAMPLE', 'IDSTABLE', 'INDEXINFO', 'LASTHPTM', 'PRESCORECODE', 'TARGETINFO');
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+Executing  SASHELP.EMCORE.EMINFOITERATOR.SCL _INIT >> 
+Executing  SASHELP.EMCORE.EMINFOITERATOR.SCL setMetaData >> 
+NOTE: There were 1 observations read from the data set EMWS1.NEURAL_EMINFO.
+      WHERE (TARGET='WidgBuy') and (KEY='MODEL');
+NOTE: The data set WORK.EMINFO40WQCSLQ has 1 observations and 3 variables.
+Executing  SASHELP.EMCORE.EMINFOITERATOR.SCL NUMELEMENTS >> 
+Executing  SASHELP.EMCORE.EMINFOITERATOR.SCL _term >> 
+Executing  SASHELP.EMCORE.EMINFOITERATOR.SCL _INIT >> 
+Executing  SASHELP.EMCORE.EMINFOITERATOR.SCL setMetaData >> 
+NOTE: There were 1 observations read from the data set EMWS1.NEURAL_EMINFO.
+      WHERE (TARGET='WidgBuy') and (KEY='DECMETA');
+NOTE: The data set WORK.EMINFO402UJR4E has 1 observations and 3 variables.
+Executing  SASHELP.EMCORE.EMINFOITERATOR.SCL next >> 
+Executing  SASHELP.EMCORE.EMINFOITERATOR.SCL next >> 
+Executing  SASHELP.EMCORE.EMINFOITERATOR.SCL _term >> 
+MPRINT(EM_DIAGRAM):    data EMWS1.Score_SCORE / view = EMWS1.Score_SCORE;
+MPRINT(EM_DIAGRAM):   set EMWS1.FIMPORT2_train;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * EM SCORE CODE;
+MPRINT(EM_DIAGRAM):   * EM Version: 14.1;
+MPRINT(EM_DIAGRAM):   * SAS Release: 9.04.01M3P062415;
+MPRINT(EM_DIAGRAM):   * Host: COB-MBA063;
+MPRINT(EM_DIAGRAM):   * Encoding: wlatin1;
+MPRINT(EM_DIAGRAM):   * Locale: en_US;
+MPRINT(EM_DIAGRAM):   * Project Path: J:\JMMORR01\CIS 445\Project 2;
+MPRINT(EM_DIAGRAM):   * Project Name: CIS 445 Project 2;
+MPRINT(EM_DIAGRAM):   * Diagram Id: EMWS1;
+MPRINT(EM_DIAGRAM):   * Diagram Name: Diagram 1;
+MPRINT(EM_DIAGRAM):   * Generated by: jmmorr01;
+MPRINT(EM_DIAGRAM):   * Date: 29OCT2018:12:00:02;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * TOOL: Extension Class;
+MPRINT(EM_DIAGRAM):   * TYPE: SAMPLE;
+MPRINT(EM_DIAGRAM):   * NODE: FIMPORT;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * TOOL: Neural;
+MPRINT(EM_DIAGRAM):   * TYPE: MODEL;
+MPRINT(EM_DIAGRAM):   * NODE: Neural;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   ***********************************;
+MPRINT(EM_DIAGRAM):   *** Begin Scoring Code for Neural;
+MPRINT(EM_DIAGRAM):   ***********************************;
+MPRINT(EM_DIAGRAM):   DROP _DM_BAD _EPS _NOCL_ _MAX_ _MAXP_ _SUM_ _NTRIALS;
+MPRINT(EM_DIAGRAM):   _DM_BAD = 0;
+MPRINT(EM_DIAGRAM):   _NOCL_ = .;
+MPRINT(EM_DIAGRAM):   _MAX_ = .;
+MPRINT(EM_DIAGRAM):   _MAXP_ = .;
+MPRINT(EM_DIAGRAM):   _SUM_ = .;
+MPRINT(EM_DIAGRAM):   _NTRIALS = .;
+MPRINT(EM_DIAGRAM):   _EPS = 1E-10;
+MPRINT(EM_DIAGRAM):   LENGTH _WARN_ $4 I_WidgBuy $ 3 U_WidgBuy $ 3 ;
+MPRINT(EM_DIAGRAM):   label S_Age = 'Standard: Age' ;
+MPRINT(EM_DIAGRAM):   label S_X2 = 'Standard: X2' ;
+MPRINT(EM_DIAGRAM):   label S_X4 = 'Standard: X4' ;
+MPRINT(EM_DIAGRAM):   label S_X5 = 'Standard: X5' ;
+MPRINT(EM_DIAGRAM):   label Incomehigh = 'Dummy: Income=high' ;
+MPRINT(EM_DIAGRAM):   label ResidenceCHI = 'Dummy: Residence=CHI' ;
+MPRINT(EM_DIAGRAM):   label ResidenceLA = 'Dummy: Residence=LA' ;
+MPRINT(EM_DIAGRAM):   label H11 = 'Hidden: H1=1' ;
+MPRINT(EM_DIAGRAM):   label I_WidgBuy = 'Into: WidgBuy' ;
+MPRINT(EM_DIAGRAM):   label U_WidgBuy = 'Unnormalized Into: WidgBuy' ;
+MPRINT(EM_DIAGRAM):   label P_WidgBuyYes = 'Predicted: WidgBuy=Yes' ;
+MPRINT(EM_DIAGRAM):   label P_WidgBuyNo = 'Predicted: WidgBuy=No' ;
+MPRINT(EM_DIAGRAM):   label _WARN_ = "Warnings";
+MPRINT(EM_DIAGRAM):   *** Generate dummy variables for Income ;
+MPRINT(EM_DIAGRAM):   drop Incomehigh ;
+MPRINT(EM_DIAGRAM):   if missing( Income ) then do;
+MPRINT(EM_DIAGRAM):   Incomehigh = .;
+MPRINT(EM_DIAGRAM):   substr(_warn_,1,1) = 'M';
+MPRINT(EM_DIAGRAM):   _DM_BAD = 1;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   length _dm4 $ 4;
+MPRINT(EM_DIAGRAM):   drop _dm4 ;
+MPRINT(EM_DIAGRAM):   _dm4 = put( Income , $4. );
+MPRINT(DMNORMIP):   call dmnorm(_dm4,
+MPRINT(DMNORLEN):  32
+MPRINT(DMNORMIP):  );
+MPRINT(EM_DIAGRAM):   if _dm4 = 'HIGH' then do;
+MPRINT(EM_DIAGRAM):   Incomehigh = 1;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if _dm4 = 'LOW' then do;
+MPRINT(EM_DIAGRAM):   Incomehigh = -1;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   Incomehigh = .;
+MPRINT(EM_DIAGRAM):   substr(_warn_,2,1) = 'U';
+MPRINT(EM_DIAGRAM):   _DM_BAD = 1;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   *** Generate dummy variables for Residence ;
+MPRINT(EM_DIAGRAM):   drop ResidenceCHI ResidenceLA ;
+MPRINT(EM_DIAGRAM):   if missing( Residence ) then do;
+MPRINT(EM_DIAGRAM):   ResidenceCHI = .;
+MPRINT(EM_DIAGRAM):   ResidenceLA = .;
+MPRINT(EM_DIAGRAM):   substr(_warn_,1,1) = 'M';
+MPRINT(EM_DIAGRAM):   _DM_BAD = 1;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   length _dm3 $ 3;
+MPRINT(EM_DIAGRAM):   drop _dm3 ;
+MPRINT(EM_DIAGRAM):   _dm3 = put( Residence , $3. );
+MPRINT(DMNORMIP):   call dmnorm(_dm3,
+MPRINT(DMNORLEN):  32
+MPRINT(DMNORMIP):  );
+MPRINT(EM_DIAGRAM):   if _dm3 = 'NY' then do;
+MPRINT(EM_DIAGRAM):   ResidenceCHI = -1;
+MPRINT(EM_DIAGRAM):   ResidenceLA = -1;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if _dm3 = 'LA' then do;
+MPRINT(EM_DIAGRAM):   ResidenceCHI = 0;
+MPRINT(EM_DIAGRAM):   ResidenceLA = 1;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if _dm3 = 'CHI' then do;
+MPRINT(EM_DIAGRAM):   ResidenceCHI = 1;
+MPRINT(EM_DIAGRAM):   ResidenceLA = 0;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   ResidenceCHI = .;
+MPRINT(EM_DIAGRAM):   ResidenceLA = .;
+MPRINT(EM_DIAGRAM):   substr(_warn_,2,1) = 'U';
+MPRINT(EM_DIAGRAM):   _DM_BAD = 1;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   *** *************************;
+MPRINT(EM_DIAGRAM):   *** Checking missing input Interval *** *************************;
+MPRINT(EM_DIAGRAM):   IF NMISS( Age , X2 , X4 , X5 ) THEN DO;
+MPRINT(EM_DIAGRAM):   SUBSTR(_WARN_, 1, 1) = 'M';
+MPRINT(EM_DIAGRAM):   _DM_BAD = 1;
+MPRINT(EM_DIAGRAM):   END;
+MPRINT(EM_DIAGRAM):   *** *************************;
+MPRINT(EM_DIAGRAM):   *** Writing the Node intvl ;
+MPRINT(EM_DIAGRAM):   *** *************************;
+MPRINT(EM_DIAGRAM):   IF _DM_BAD EQ 0 THEN DO;
+MPRINT(EM_DIAGRAM):   S_Age = -4.88817118146551 + 0.14483470167305 * Age ;
+MPRINT(EM_DIAGRAM):   S_X2 = -1.48268475831064 + 1.45361250814768 * X2 ;
+MPRINT(EM_DIAGRAM):   S_X4 = -2.40761503764441 + 4.01269172940736 * X4 ;
+MPRINT(EM_DIAGRAM):   S_X5 = -2.110810311196 + 0.44910857685021 * X5 ;
+MPRINT(EM_DIAGRAM):   END;
+MPRINT(EM_DIAGRAM):   ELSE DO;
+MPRINT(EM_DIAGRAM):   IF MISSING( Age ) THEN S_Age = . ;
+MPRINT(EM_DIAGRAM):   ELSE S_Age = -4.88817118146551 + 0.14483470167305 * Age ;
+MPRINT(EM_DIAGRAM):   IF MISSING( X2 ) THEN S_X2 = . ;
+MPRINT(EM_DIAGRAM):   ELSE S_X2 = -1.48268475831064 + 1.45361250814768 * X2 ;
+MPRINT(EM_DIAGRAM):   IF MISSING( X4 ) THEN S_X4 = . ;
+MPRINT(EM_DIAGRAM):   ELSE S_X4 = -2.40761503764441 + 4.01269172940736 * X4 ;
+MPRINT(EM_DIAGRAM):   IF MISSING( X5 ) THEN S_X5 = . ;
+MPRINT(EM_DIAGRAM):   ELSE S_X5 = -2.110810311196 + 0.44910857685021 * X5 ;
+MPRINT(EM_DIAGRAM):   END;
+MPRINT(EM_DIAGRAM):   *** *************************;
+MPRINT(EM_DIAGRAM):   *** Writing the Node nom ;
+MPRINT(EM_DIAGRAM):   *** *************************;
+MPRINT(EM_DIAGRAM):   *** *************************;
+MPRINT(EM_DIAGRAM):   *** Writing the Node H1 ;
+MPRINT(EM_DIAGRAM):   *** *************************;
+MPRINT(EM_DIAGRAM):   IF _DM_BAD EQ 0 THEN DO;
+MPRINT(EM_DIAGRAM):   H11 = 1.31119830202724 * S_Age + -0.85473317278244 * S_X2 + 0.39214796565743 * S_X4 + 0.61349439215457 * S_X5 ;
+MPRINT(EM_DIAGRAM):   H11 = H11 + 2.05589157809814 * Incomehigh + 4.3880649593689 * ResidenceCHI + -0.26422130812869 * ResidenceLA ;
+MPRINT(EM_DIAGRAM):   H11 = 1.16869437616861 + H11 ;
+MPRINT(EM_DIAGRAM):   H11 = TANH(H11 );
+MPRINT(EM_DIAGRAM):   END;
+MPRINT(EM_DIAGRAM):   ELSE DO;
+MPRINT(EM_DIAGRAM):   H11 = .;
+MPRINT(EM_DIAGRAM):   END;
+MPRINT(EM_DIAGRAM):   *** *************************;
+MPRINT(EM_DIAGRAM):   *** Writing the Node WidgBuy ;
+MPRINT(EM_DIAGRAM):   *** *************************;
+MPRINT(EM_DIAGRAM):   IF _DM_BAD EQ 0 THEN DO;
+MPRINT(EM_DIAGRAM):   P_WidgBuyYes = -8.4165196320669 * H11 ;
+MPRINT(EM_DIAGRAM):   P_WidgBuyYes = 0.40891244551259 + P_WidgBuyYes ;
+MPRINT(EM_DIAGRAM):   P_WidgBuyNo = 0;
+MPRINT(EM_DIAGRAM):   _MAX_ = MAX (P_WidgBuyYes , P_WidgBuyNo );
+MPRINT(EM_DIAGRAM):   _SUM_ = 0.;
+MPRINT(EM_DIAGRAM):   P_WidgBuyYes = EXP(P_WidgBuyYes - _MAX_);
+MPRINT(EM_DIAGRAM):   _SUM_ = _SUM_ + P_WidgBuyYes ;
+MPRINT(EM_DIAGRAM):   P_WidgBuyNo = EXP(P_WidgBuyNo - _MAX_);
+MPRINT(EM_DIAGRAM):   _SUM_ = _SUM_ + P_WidgBuyNo ;
+MPRINT(EM_DIAGRAM):   P_WidgBuyYes = P_WidgBuyYes / _SUM_;
+MPRINT(EM_DIAGRAM):   P_WidgBuyNo = P_WidgBuyNo / _SUM_;
+MPRINT(EM_DIAGRAM):   END;
+MPRINT(EM_DIAGRAM):   ELSE DO;
+MPRINT(EM_DIAGRAM):   P_WidgBuyYes = .;
+MPRINT(EM_DIAGRAM):   P_WidgBuyNo = .;
+MPRINT(EM_DIAGRAM):   END;
+MPRINT(EM_DIAGRAM):   IF _DM_BAD EQ 1 THEN DO;
+MPRINT(EM_DIAGRAM):   P_WidgBuyYes = 0.55;
+MPRINT(EM_DIAGRAM):   P_WidgBuyNo = 0.45;
+MPRINT(EM_DIAGRAM):   END;
+MPRINT(EM_DIAGRAM):   *** *************************;
+MPRINT(EM_DIAGRAM):   *** Writing the I_WidgBuy AND U_WidgBuy ;
+MPRINT(EM_DIAGRAM):   *** *************************;
+MPRINT(EM_DIAGRAM):   _MAXP_ = P_WidgBuyYes ;
+MPRINT(EM_DIAGRAM):   I_WidgBuy = "YES" ;
+MPRINT(EM_DIAGRAM):   U_WidgBuy = "Yes" ;
+MPRINT(EM_DIAGRAM):   IF( _MAXP_ LT P_WidgBuyNo ) THEN DO;
+MPRINT(EM_DIAGRAM):   _MAXP_ = P_WidgBuyNo ;
+MPRINT(EM_DIAGRAM):   I_WidgBuy = "NO " ;
+MPRINT(EM_DIAGRAM):   U_WidgBuy = "No " ;
+MPRINT(EM_DIAGRAM):   END;
+MPRINT(EM_DIAGRAM):   ********************************;
+MPRINT(EM_DIAGRAM):   *** End Scoring Code for Neural;
+MPRINT(EM_DIAGRAM):   ********************************;
+MPRINT(EM_DIAGRAM):   drop H11 ;
+MPRINT(EM_DIAGRAM):   drop S_:;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * TOOL: Model Compare Class;
+MPRINT(EM_DIAGRAM):   * TYPE: ASSESS;
+MPRINT(EM_DIAGRAM):   * NODE: MdlComp;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   drop _temp_;
+MPRINT(EM_DIAGRAM):   if (P_WidgBuyYes ge 0.99984133136036) then do;
+MPRINT(EM_DIAGRAM):   _temp_ = dmran(1234);
+MPRINT(EM_DIAGRAM):   b_WidgBuy = floor(1 + 8*_temp_);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if (P_WidgBuyYes ge 0.99977336691596) then do;
+MPRINT(EM_DIAGRAM):   b_WidgBuy = 9;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if (P_WidgBuyYes ge 0.99970837920021) then do;
+MPRINT(EM_DIAGRAM):   b_WidgBuy = 10;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if (P_WidgBuyYes ge 0.5001033319596) then do;
+MPRINT(EM_DIAGRAM):   b_WidgBuy = 11;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if (P_WidgBuyYes ge 0.00046547075083) then do;
+MPRINT(EM_DIAGRAM):   b_WidgBuy = 12;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if (P_WidgBuyYes ge 0.00041731570724) then do;
+MPRINT(EM_DIAGRAM):   b_WidgBuy = 13;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if (P_WidgBuyYes ge 0.00039273499336) then do;
+MPRINT(EM_DIAGRAM):   b_WidgBuy = 14;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if (P_WidgBuyYes ge 0.00037297403547) then do;
+MPRINT(EM_DIAGRAM):   b_WidgBuy = 15;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if (P_WidgBuyYes ge 0.00035855830394) then do;
+MPRINT(EM_DIAGRAM):   b_WidgBuy = 16;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else if (P_WidgBuyYes ge 0.00033972556763) then do;
+MPRINT(EM_DIAGRAM):   b_WidgBuy = 17;
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   else do;
+MPRINT(EM_DIAGRAM):   _temp_ = dmran(1234);
+MPRINT(EM_DIAGRAM):   b_WidgBuy = floor(18 + 3*_temp_);
+MPRINT(EM_DIAGRAM):   end;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * TOOL: Score Node;
+MPRINT(EM_DIAGRAM):   * TYPE: ASSESS;
+MPRINT(EM_DIAGRAM):   * NODE: Score;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   * Score: Creating Fixed Names;
+MPRINT(EM_DIAGRAM):   *------------------------------------------------------------*;
+MPRINT(EM_DIAGRAM):   LABEL EM_SEGMENT = 'Segment';
+MPRINT(EM_DIAGRAM):   EM_SEGMENT = b_WidgBuy;
+MPRINT(EM_DIAGRAM):   LABEL EM_EVENTPROBABILITY = 'Probability for level YES of WidgBuy';
+MPRINT(EM_DIAGRAM):   EM_EVENTPROBABILITY = P_WidgBuyYes;
+MPRINT(EM_DIAGRAM):   LABEL EM_PROBABILITY = 'Probability of Classification';
+MPRINT(EM_DIAGRAM):   EM_PROBABILITY = max( P_WidgBuyYes , P_WidgBuyNo );
+MPRINT(EM_DIAGRAM):   LENGTH EM_CLASSIFICATION
+MPRINT(DMNORLEN):   $32
+MPRINT(EM_DIAGRAM):  ;
+MPRINT(EM_DIAGRAM):   LABEL EM_CLASSIFICATION = "Prediction for WidgBuy";
+MPRINT(EM_DIAGRAM):   EM_CLASSIFICATION = I_WidgBuy;
+MPRINT(EM_DIAGRAM):   run;
+MPRINT(EM_DIAGRAM):    proc printto;
+MPRINT(EM_DIAGRAM):   run;

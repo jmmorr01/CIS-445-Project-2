@@ -1,0 +1,38 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Summary
+
+          Measurement    Frequency
+ Role        Level         Count
+
+INPUT      INTERVAL          4    
+INPUT      NOMINAL           2    
+TARGET     BINARY            1    
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Model Events
+
+                                   Number
+                    Measurement      of
+Target     Event       Level       Levels      Order        Label
+
+WidgBuy     YES       BINARY          2      Descending    WidgBuy
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Predicted and decision variables
+
+Type         Variable        Label
+
+TARGET       WidgBuy         WidgBuy               
+PREDICTED    P_WidgBuyYes    Predicted: WidgBuy=Yes
+RESIDUAL     R_WidgBuyYes    Residual: WidgBuy=Yes 
+PREDICTED    P_WidgBuyNo     Predicted: WidgBuy=No 
+RESIDUAL     R_WidgBuyNo     Residual: WidgBuy=No  
+FROM         F_WidgBuy       From: WidgBuy         
+INTO         I_WidgBuy       Into: WidgBuy         

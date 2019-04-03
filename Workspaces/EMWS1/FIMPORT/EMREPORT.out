@@ -1,0 +1,12 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Exported Attributes for TRAIN Port
+
+          Measurement    Frequency
+ Role        Level         Count
+
+INPUT      INTERVAL          4    
+INPUT      NOMINAL           2    
+TARGET     BINARY            1    

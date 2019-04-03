@@ -1,0 +1,105 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Summary
+
+          Measurement    Frequency
+ Role        Level         Count
+
+TARGET      BINARY           1    
+ 
+                                                                                               
+ 
+ 
+
+
+
+
+
+
+
+Fit Statistics
+Model Selection based on Train: Misclassification Rate (_MISC_)
+
+                                                              Train:
+                                              Train:         Average    Train:
+Selected    Model         Model         Misclassification    Squared      Roc     Train: Gini
+ Model      Node       Description             Rate           Error      Index    Coefficient
+
+   Y        Neural    Neural Network           0.00          0.00000     1.000       1.000   
+            Reg       Regression               0.00          0.00000     1.000       1.000   
+            Tree      Decision Tree            0.15          0.10444     0.899       0.798   
+ 
+                                                                                               
+ 
+ 
+
+
+
+
+
+
+
+Fit Statistics Table
+Target: WidgBuy
+
+Data Role=Train
+
+Statistics                                                         Neural        Reg      Tree
+
+Train: Bin-Based Two-Way Kolmogorov-Smirnov Probability Cutoff      1.000      0.999     0.6000
+Train: Kolmogorov-Smirnov Statistic                                 1.000      1.000     0.6670
+Train: Akaike's Information Criterion                              20.011     16.012      .    
+Train: Average Squared Error                                        0.000      0.000     0.1044
+Train: Roc Index                                                    1.000      1.000     0.8990
+Train: Average Error Function                                       0.000      0.000      .    
+Train: Cumulative Percent Captured Response                        18.182     18.182    16.1616
+Train: Percent Captured Response                                    9.091      9.091     8.0808
+Selection Criterion: Train: Misclassification Rate                  0.000      0.000     0.1500
+Train: Degrees of Freedom for Error                                10.000     12.000      .    
+Train: Model Degrees of Freedom                                    10.000      8.000      .    
+Train: Total Degrees of Freedom                                    20.000     20.000    20.0000
+Train: Divisor for ASE                                             40.000     40.000    40.0000
+Train: Error Function                                               0.011      0.012      .    
+Train: Final Prediction Error                                       0.000      0.000      .    
+Train: Gain                                                        81.818     81.818    61.6162
+Train: Gini Coefficient                                             1.000      1.000     0.7980
+Train: Bin-Based Two-Way Kolmogorov-Smirnov Statistic               1.000      1.000     0.6670
+Train: Kolmogorov-Smirnov Probability Cutoff                        0.010      0.010     0.0100
+Train: Cumulative Lift                                              1.818      1.818     1.6162
+Train: Lift                                                         1.818      1.818     1.6162
+Train: Maximum Absolute Error                                       0.001      0.001     0.8889
+Train: Misclassification Rate                                       0.000      0.000     0.1500
+Train: Mean Square Error                                            0.000      0.000      .    
+Train: Sum of Frequencies                                          20.000     20.000    20.0000
+Train: Number of Estimate Weights                                  10.000      8.000      .    
+Train: Root Average Sum of Squares                                  0.000      0.001     0.3232
+Train: Cumulative Percent Response                                100.000    100.000    88.8889
+Train: Percent Response                                           100.000    100.000    88.8889
+Train: Root Final Prediction Error                                  0.001      0.001      .    
+Train: Root Mean Squared Error                                      0.000      0.001      .    
+Train: Schwarz's Bayesian Criterion                                29.968     23.978      .    
+Train: Sum of Squared Errors                                        0.000      0.000     4.1778
+Train: Sum of Case Weights Times Freq                              40.000     40.000      .    
+Train: Number of Wrong Classifications                              0.000       .         .    
+ 
+                                                                                               
+ 
+ 
+
+
+
+
+
+
+
+Event Classification Table
+Model Selection based on Train: Misclassification Rate (_MISC_)
+
+Model        Model        Data              Target      False      True       False      True
+Node      Description     Role    Target     Label    Negative   Negative   Positive   Positive
+
+Reg      Regression       TRAIN   WidgBuy   WidgBuy       0          9          0         11   
+Tree     Decision Tree    TRAIN   WidgBuy   WidgBuy       0          6          3         11   
+Neural   Neural Network   TRAIN   WidgBuy   WidgBuy       0          9          0         11   

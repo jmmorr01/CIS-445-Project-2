@@ -1,0 +1,162 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Summary
+
+          Measurement    Frequency
+ Role        Level         Count
+
+INPUT      INTERVAL          4    
+INPUT      NOMINAL           2    
+TARGET     BINARY            1    
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Model Events
+
+                                   Number
+                    Measurement      of
+Target     Event       Level       Levels      Order        Label
+
+WidgBuy     YES       BINARY          2      Descending    WidgBuy
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Predicted and decision variables
+
+Type         Variable        Label
+
+TARGET       WidgBuy         WidgBuy               
+PREDICTED    P_WidgBuyYes    Predicted: WidgBuy=Yes
+RESIDUAL     R_WidgBuyYes    Residual: WidgBuy=Yes 
+PREDICTED    P_WidgBuyNo     Predicted: WidgBuy=No 
+RESIDUAL     R_WidgBuyNo     Residual: WidgBuy=No  
+FROM         F_WidgBuy       From: WidgBuy         
+INTO         I_WidgBuy       Into: WidgBuy         
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+The DMREG Procedure
+
+                Model Information
+
+Training Data Set              WORK.EM_DMREG.VIEW
+DMDB Catalog                   WORK.REG_DMDB     
+Target Variable                WidgBuy (WidgBuy) 
+Target Measurement Level       Ordinal           
+Number of Target Categories    2                 
+Error                          MBernoulli        
+Link Function                  Logit             
+Number of Model Parameters     8                 
+Number of Observations         20                
+
+
+         Target Profile
+ 
+ Ordered     Widg         Total
+   Value     Buy      Frequency
+
+       1     Yes             11
+       2     No               9
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+The DMREG Procedure
+
+Newton-Raphson Ridge Optimization
+
+Without Parameter Scaling
+
+Parameter Estimates               8
+
+                                             Optimization Start
+
+Active Constraints                                  0  Objective Function                       13.762776274
+Max Abs Gradient Element                          6.1                                                       
+
+
+                                                                                                        Ratio
+                                                                                                      Between
+                                                                                                       Actual
+                                                                 Objective     Max Abs                    and
+                     Function         Active        Objective     Function    Gradient              Predicted
+Iter     Restarts       Calls    Constraints         Function       Change     Element     Ridge       Change
+
+   1            0           2              0          4.37103       9.3917      1.4953         0        1.158
+   2            0           3              0          1.96652       2.4045      0.6088         0        1.293
+   3            0           4              0          0.83923       1.1273      0.2610         0        1.289
+   4            0           5              0          0.32718       0.5120      0.1026         0        1.277
+   5            0           6              0          0.12194       0.2052      0.0384         0        1.267
+   6            0           7              0          0.04510       0.0768      0.0142         0        1.265
+   7            0           8              0          0.01665       0.0284     0.00526         0        1.265
+   8            0           9              0          0.00614       0.0105     0.00194         0        1.265
+
+                                            Optimization Results
+
+Iterations                                          8  Function Calls                                     11
+Hessian Calls                                       9  Active Constraints                                  0
+Objective Function                       0.0061416906  Max Abs Gradient Element                  0.001940947
+Ridge                                               0  Actual Over Pred Change                  1.2646017997
+
+Convergence criterion (ABSCONV=0.0137627763) satisfied.                                           
+
+NOTE: At least one element of the gradient is greater than 1e-3.
+
+
+
+     Likelihood Ratio Test for Global Null Hypothesis: BETA=0
+ 
+     -2 Log Likelihood          Likelihood
+  Intercept     Intercept &          Ratio
+       Only      Covariates     Chi-Square       DF     Pr > ChiSq
+
+     27.526           0.012        27.5133        7         0.0003
+
+
+         Type 3 Analysis of Effects
+ 
+                           Wald
+Effect         DF    Chi-Square    Pr > ChiSq
+
+Age             1        0.0281        0.8669
+Income          1        0.0654        0.7982
+Residence       2        0.2403        0.8868
+X2              1        0.0137        0.9068
+X4              1        0.0003        0.9869
+X5              1        0.0037        0.9515
+
+
+                              Analysis of Maximum Likelihood Estimates
+ 
+                                    Standard          Wald                  Standardized
+Parameter         DF    Estimate       Error    Chi-Square    Pr > ChiSq        Estimate    Exp(Est)
+
+Intercept          1     25.3156       155.0          0.03        0.8703                     999.000
+Age                1     -0.9725      5.8043          0.03        0.8669         -3.7018       0.378
+Income    high     1     -6.6741     26.0980          0.07        0.7982                       0.001
+Residence CHI      1    -14.7970     49.4991          0.09        0.7650                       0.000
+Residence LA       1      1.8557     42.8673          0.00        0.9655                       6.396
+X2                 1      4.5656     38.9956          0.01        0.9068          1.7317      96.125
+X4                 1      1.6689       101.9          0.00        0.9869          0.2293       5.306
+X5                 1     -0.6534     10.7500          0.00        0.9515         -0.8021       0.520
+
+
+       Odds Ratio Estimates
+                 
+                             Point
+Effect                    Estimate
+
+Age                          0.378
+Income    high vs low       <0.001
+Residence CHI vs NY         <0.001
+Residence LA vs NY          <0.001
+X2                          96.125
+X4                           5.306
+X5                           0.520

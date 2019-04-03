@@ -1,0 +1,19 @@
+<PFDNode x="231" y="594" id="EMCODE" title="SAS Code"></PFDNode>
+<PFDNode x="231" y="66" id="FIMPORT" title="File Import"></PFDNode>
+<PFDNode x="396" y="330" id="FIMPORT2" title="File Import (2)"></PFDNode>
+<PFDNode x="231" y="330" id="MdlComp" title="Model Comparison"></PFDNode>
+<PFDNode x="396" y="198" id="Neural" title="Neural Network"></PFDNode>
+<PFDNode x="231" y="198" id="Reg" title="Regression"></PFDNode>
+<PFDNode x="231" y="726" id="Report" title="Reporter"></PFDNode>
+<PFDNode x="231" y="462" id="Score" title="Score"></PFDNode>
+<PFDNode x="66" y="198" id="Tree" title="Decision Tree"></PFDNode>
+<PFDLink id='1' fromId='FIMPORT' toId='Tree'></PFDLink>
+<PFDLink id='2' fromId='FIMPORT' toId='Reg'></PFDLink>
+<PFDLink id='3' fromId='FIMPORT' toId='Neural'></PFDLink>
+<PFDLink id='4' fromId='Reg' toId='MdlComp'></PFDLink>
+<PFDLink id='5' fromId='Tree' toId='MdlComp'></PFDLink>
+<PFDLink id='6' fromId='Neural' toId='MdlComp'></PFDLink>
+<PFDLink id='7' fromId='MdlComp' toId='Score'></PFDLink>
+<PFDLink id='8' fromId='FIMPORT2' toId='Score'></PFDLink>
+<PFDLink id='9' fromId='Score' toId='EMCODE'></PFDLink>
+<PFDLink id='10' fromId='EMCODE' toId='Report'></PFDLink>

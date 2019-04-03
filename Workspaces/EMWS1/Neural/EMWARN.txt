@@ -1,0 +1,5 @@
+    The computed Average Squared Error for WidgBuy is 8.5393026E-8.
+    This indicates a possible target duplication issue.
+    Please review the list of inputs used in the model.
+
+

@@ -1,0 +1,36 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Variable Summary
+
+                  Measurement    Frequency
+Role                 Level         Count
+
+ASSESS             BINARY            1    
+ASSESS             NOMINAL           1    
+CLASSIFICATION     NOMINAL           3    
+INPUT              INTERVAL          4    
+INPUT              NOMINAL           2    
+PREDICT            INTERVAL          2    
+REJECTED           INTERVAL          2    
+REJECTED           NOMINAL           1    
+RESIDUAL           INTERVAL          2    
+SEGMENT            NOMINAL           2    
+TARGET             BINARY            1    
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+
+Obs    EM_EVENTPROBABILITY    EM_CLASSIFICATION
+
+ 1           0.99985                 YES       
+ 2           0.99985                 YES       
+ 3           0.99980                 YES       
+ 4           0.00033                 NO        
+ 5           0.00033                 NO        
+ 6           0.00034                 NO        
+ 7           0.00035                 NO        
+ 8           0.00036                 NO        
+ 9           0.00044                 NO        

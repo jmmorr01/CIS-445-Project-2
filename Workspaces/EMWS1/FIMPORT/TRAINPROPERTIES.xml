@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  Location="CATALOG" Catalog="SASHELP.EMSAMP.Fimport.SOURCE" ImportType="Local" GuessRows="500"
+ Delimiter="," NameRow="Y" SkipRows="0" MaxRows="1000000" MaxCols="10000" FileType="xlsx"
+ Role="TRAIN" ForceRun="N" Summarize="N" AdvancedAdvisor="N" RunAction="Train" Component="FileImport"
+ IFileName="J:\JMMORR01\CIS 445\Project 2\WidgBuyTrain.xlsx" AccessTable="NoTableName"
+ UserID="NoUserID" Password="NoPassword" RawCreateTime="1856431026" CreateTime="29OCT2018:11:17:06"
+ RunId="7765b520-c263-4859-9c17-33aa048525a9" RawLastTimeRun="1856431273.7" RawRunTime="11.874000072"
+ LastTimeRun="29OCT2018:11:21:14" RunTime="0 Hr. 0 Min. 11.87 Sec.">
+<VARIABLEPROPERTIES/>
+<FILEPROPERTIES ><![CDATA[
+USERTRAINCODE
+USERSCORECODE
+USERREPORTCODE
+VARIABLESETDELTA
+DELTACODE
+]]>
+</FILEPROPERTIES></_ROOT_>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?><_ROOT_  Location="CATALOG" Catalog="SASHELP.EMSAMP.Fimport.SOURCE" ImportType="Local" GuessRows="500"
+ Delimiter="," NameRow="Y" SkipRows="0" MaxRows="1000000" MaxCols="10000" FileType="xlsx"
+ Role="SCORE" ForceRun="N" Summarize="N" AdvancedAdvisor="N" RunAction="Train" Component="FileImport"
+ IFileName="J:\JMMORR01\CIS 445\Project 2\WidgBuyScore.xlsx" AccessTable="NoTableName"
+ UserID="NoUserID" Password="NoPassword" RawCreateTime="1856432679.8" CreateTime="29OCT2018:11:44:40"
+ RunId="6fa87751-df14-4ebb-a9ce-8c3a236f13c4" RawLastTimeRun="1856433570.2" RawRunTime="18.04399991"
+ LastTimeRun="29OCT2018:11:59:30" RunTime="0 Hr. 0 Min. 18.04 Sec.">
+<VARIABLEPROPERTIES/>
+<FILEPROPERTIES ><![CDATA[
+USERTRAINCODE
+USERSCORECODE
+USERREPORTCODE
+VARIABLESETDELTA
+DELTACODE
+]]>
+</FILEPROPERTIES></_ROOT_>

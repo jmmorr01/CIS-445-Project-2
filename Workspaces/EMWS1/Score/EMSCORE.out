@@ -1,0 +1,35 @@
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Score Input Variables
+
+                                                                      Used in
+Variable                                                  Variable     Score
+Name          Role     Creator    Comment    Label         Hidden      Code
+
+Age          INPUT                           Age             N           Y   
+Income       INPUT                           Income          N           Y   
+Residence    INPUT                           Residence       N           Y   
+WidgBuy      TARGET                          WidgBuy         N           N   
+X2           INPUT                           X2              N           Y   
+X4           INPUT                           X4              N           Y   
+X5           INPUT                           X5              N           Y   
+ 
+                                                                                                                                                                                                                                                                
+ 
+ 
+Score Output Variables
+
+Variable Name          Function          Creator    Label
+
+EM_CLASSIFICATION      CLASSIFICATION    Score      Prediction for WidgBuy              
+EM_EVENTPROBABILITY    PREDICT           Score      Probability for level YES of WidgBuy
+EM_PROBABILITY         PREDICT           Score      Probability of Classification       
+EM_SEGMENT             TRANSFORM         Score      Segment                             
+I_WidgBuy              CLASSIFICATION    Neural     Into: WidgBuy                       
+P_WidgBuyNo            PREDICT           Neural     Predicted: WidgBuy=No               
+P_WidgBuyYes           PREDICT           Neural     Predicted: WidgBuy=Yes              
+U_WidgBuy              CLASSIFICATION    Neural     Unnormalized Into: WidgBuy          
+_WARN_                 ASSESS            Neural     Warnings                            
+b_WidgBuy              TRANSFORM         MdlComp                                        

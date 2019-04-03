@@ -1,0 +1,32 @@
+*------------------------------------------------------------*
+ Node = 3
+*------------------------------------------------------------*
+if Income IS ONE OF: LOW
+then 
+ Tree Node Identifier   = 3
+ Number of Observations = 9
+ Predicted: WidgBuy=Yes = 0.89
+ Predicted: WidgBuy=No = 0.11
+ 
+*------------------------------------------------------------*
+ Node = 4
+*------------------------------------------------------------*
+if Income IS ONE OF: HIGH or MISSING
+AND Age < 30.5
+then 
+ Tree Node Identifier   = 4
+ Number of Observations = 5
+ Predicted: WidgBuy=Yes = 0.60
+ Predicted: WidgBuy=No = 0.40
+ 
+*------------------------------------------------------------*
+ Node = 5
+*------------------------------------------------------------*
+if Income IS ONE OF: HIGH or MISSING
+AND Age >= 30.5 or MISSING
+then 
+ Tree Node Identifier   = 5
+ Number of Observations = 6
+ Predicted: WidgBuy=Yes = 0.00
+ Predicted: WidgBuy=No = 1.00
+ 

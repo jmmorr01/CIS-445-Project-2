@@ -1,0 +1,156 @@
+*------------------------------------------------------------*
+User:                jmmorr01
+Date:                October 29, 2018
+Time:                12:00:15
+*------------------------------------------------------------*
+* Training Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Variable Summary
+ 
+           Measurement    Frequency
+ Role         Level         Count
+ 
+SEGMENT      NOMINAL          1
+TARGET       BINARY           1
+
+
+*------------------------------------------------------------*
+* Score Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Score Input Variables
+ 
+                                                                      Used in
+Variable                                                  Variable     Score
+Name          Role     Creator    Comment    Label         Hidden      Code
+ 
+Age          INPUT                           Age             N           Y
+Income       INPUT                           Income          N           Y
+Residence    INPUT                           Residence       N           Y
+WidgBuy      TARGET                          WidgBuy         N           N
+X2           INPUT                           X2              N           Y
+X4           INPUT                           X4              N           Y
+X5           INPUT                           X5              N           Y
+ 
+ 
+ 
+ 
+Score Output Variables
+ 
+Variable Name          Function          Creator    Label
+ 
+EM_CLASSIFICATION      CLASSIFICATION    Score      Prediction for WidgBuy
+EM_EVENTPROBABILITY    PREDICT           Score      Probability for level YES of WidgBuy
+EM_PROBABILITY         PREDICT           Score      Probability of Classification
+EM_SEGMENT             TRANSFORM         Score      Segment
+I_WidgBuy              CLASSIFICATION    Neural     Into: WidgBuy
+P_WidgBuyNo            PREDICT           Neural     Predicted: WidgBuy=No
+P_WidgBuyYes           PREDICT           Neural     Predicted: WidgBuy=Yes
+U_WidgBuy              CLASSIFICATION    Neural     Unnormalized Into: WidgBuy
+_WARN_                 ASSESS            Neural     Warnings
+b_WidgBuy              TRANSFORM         MdlComp
+
+
+*------------------------------------------------------------*
+* Report Output
+*------------------------------------------------------------*
+ 
+ 
+ 
+ 
+Class Variable Summary Statistics
+ 
+Data Role=SCORE Output Type=CLASSIFICATION
+ 
+             Numeric    Formatted    Frequency
+Variable      Value       Value        Count      Percent
+ 
+I_WidgBuy       .          NO            6        66.6667
+I_WidgBuy       .          YES           3        33.3333
+ 
+ 
+Data Role=SCORE Output Type=SEGMENT
+ 
+             Numeric    Formatted    Frequency
+Variable      Value       Value        Count      Percent
+ 
+b_WidgBuy        6         6             1        11.1111
+b_WidgBuy        7         7             1        11.1111
+b_WidgBuy        9         9             1        11.1111
+b_WidgBuy       13         13            1        11.1111
+b_WidgBuy       16         16            1        11.1111
+b_WidgBuy       17         17            1        11.1111
+b_WidgBuy       19         19            1        11.1111
+b_WidgBuy       20         20            2        22.2222
+ 
+ 
+Data Role=TRAIN Output Type=CLASSIFICATION
+ 
+             Numeric    Formatted    Frequency
+Variable      Value       Value        Count      Percent
+ 
+I_WidgBuy       .          NO             9          45
+I_WidgBuy       .          YES           11          55
+ 
+ 
+Data Role=TRAIN Output Type=SEGMENT
+ 
+             Numeric    Formatted    Frequency
+Variable      Value       Value        Count      Percent
+ 
+b_WidgBuy        2         2             1            5
+b_WidgBuy        3         3             1            5
+b_WidgBuy        4         4             1            5
+b_WidgBuy        5         5             1            5
+b_WidgBuy        6         6             2           10
+b_WidgBuy        7         7             2           10
+b_WidgBuy        9         9             1            5
+b_WidgBuy       10         10            1            5
+b_WidgBuy       11         11            1            5
+b_WidgBuy       12         12            1            5
+b_WidgBuy       13         13            1            5
+b_WidgBuy       14         14            1            5
+b_WidgBuy       15         15            1            5
+b_WidgBuy       16         16            1            5
+b_WidgBuy       17         17            1            5
+b_WidgBuy       19         19            1            5
+b_WidgBuy       20         20            2           10
+ 
+ 
+ 
+ 
+Interval Variable Summary Statistics
+ 
+Variable Name=P_WidgBuyNo
+ 
+Statistics    Label                  TRAIN      SCORE
+ 
+  MEAN        Mean                   0.4499    0.66648
+  STD         Standard Deviation     0.5101    0.49974
+  N           Non Missing           20.0000    9.00000
+  MIN         Minimum                0.0001    0.00015
+  P25         25th Percentile        0.0001    0.00020
+  MEDIAN      Median                 0.0003    0.99964
+  P75         75th Percentile        0.9996    0.99966
+  MAX         Maximum                0.9997    0.99967
+ 
+ 
+Variable Name=P_WidgBuyYes
+ 
+Statistics    Label                  TRAIN      SCORE
+ 
+  MEAN        Mean                   0.5501    0.33352
+  STD         Standard Deviation     0.5101    0.49974
+  N           Non Missing           20.0000    9.00000
+  MIN         Minimum                0.0003    0.00033
+  P25         25th Percentile        0.0004    0.00034
+  MEDIAN      Median                 0.9997    0.00036
+  P75         75th Percentile        0.9999    0.99980
+  MAX         Maximum                0.9999    0.99985
